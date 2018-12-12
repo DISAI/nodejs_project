@@ -6,6 +6,7 @@ import router from './router'
 import { Header } from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import './style/mui/css/mui.min.css'
+import './style/mui/css/icons-extra.css'
 Vue.component(Header.name, Header)
 Vue.config.productionTip = false
 
