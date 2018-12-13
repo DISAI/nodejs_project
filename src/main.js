@@ -3,11 +3,34 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { Header } from 'mint-ui'
+import { Header, Swipe, SwipeItem } from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import './style/mui/css/mui.min.css'
 import './style/mui/css/icons-extra.css'
+import VueResource from 'vue-resource'
+import axios from 'axios'
+Vue.prototype.$axios = axios
+/*
+Vue.prototype.$axios = axios.create({
+  baseURL: 'https://c.y.qq.com',
+  timeout: 0,
+  withCredentials: true, // 允许跨域 cookie
+  headers: {'X-Requested-With': 'XMLHttpRequest'},
+  maxContentLength: 2000,
+  transformResponse: [function (data) {
+    try {
+      data = JSON.parse(data)
+    } catch (e) {
+      data = {}
+    }
+    return data
+  }]
+})
+ */
+Vue.use(VueResource)
 Vue.component(Header.name, Header)
+Vue.component(Swipe.name, Swipe)
+Vue.component(SwipeItem.name, SwipeItem)
 Vue.config.productionTip = false
 
 /* 主入口 */
